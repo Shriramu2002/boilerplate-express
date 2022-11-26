@@ -1,7 +1,7 @@
 let express = require('express');
 let app = express();
 app.get("/", function(req, res) {
-    res.send("views/index.html");
+    res.sendFile(views/index.html);
   });
 // console.log("Hello world");
 
