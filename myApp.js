@@ -2,6 +2,8 @@ const { text } = require('body-parser');
 let express = require('express');
 let app = express();
 require("dotenv").config();
+let bodyParser = require('body-parser');
+
 const path = require("path");
 const str = "Hello json";
 
@@ -9,7 +11,7 @@ function mylogger(req,res,next){
   console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();
 }
-
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(mylogger);
 app.use("/public",express.static(path.join(__dirname,"public")));
 app.get("/", function(req, res) {
