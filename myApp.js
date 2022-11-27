@@ -1,8 +1,8 @@
 let express = require('express');
 let app = express();
-absPath = __dirname + views/index.html;
+const path = require("path");
 app.get("/", function(req, res) {
-    res.sendFile(absPath);
+    res.sendFile(path.join(__dirname,"views/index.html"));
   });
 // console.log("Hello world");
 
