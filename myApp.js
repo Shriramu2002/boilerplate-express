@@ -1,7 +1,7 @@
 const { text } = require('body-parser');
 let express = require('express');
 let app = express();
-//require("dotenv").config();
+require("dotenv").config();
 const path = require("path");
 const str = "Hello json";
 app.use("/public",express.static(path.join(__dirname,"public")));
@@ -11,7 +11,7 @@ app.get("/", function(req, res) {
  app.get("/json",function(req,res){
     if(process.env.MESSAGE_STYLE==='uppercase'){
         res.json({
-            "message":str.toUpperCase()
+            "message":"HELLO JSON"
         })
     }
     else{
