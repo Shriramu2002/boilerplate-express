@@ -10,7 +10,7 @@ app.get("/", function(req, res) {
   });
  app.get("/json",function(req,res){
     res.json({
-        "message":process.env.MESSAGE_STYLE==="uppercase"?str.toUpperCase():str.toLowerCase()
+        "message":process.env.MESSAGE_STYLE==="uppercase"?str.toUpperCase():str
     });
  }) ;
 // console.log("Hello world");
