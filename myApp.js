@@ -4,6 +4,11 @@ let app = express();
 require("dotenv").config();
 const path = require("path");
 const str = "Hello json";
+function mylogger(req,res,next){
+  console.log(`${req.method} ${req.path} - ${req.ip}`);
+  next();
+}
+app.use(mylogger);
 app.use("/public",express.static(path.join(__dirname,"public")));
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname,"views/index.html"));
