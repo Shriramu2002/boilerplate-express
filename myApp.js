@@ -1,7 +1,7 @@
 const { text } = require('body-parser');
 let express = require('express');
 let app = express();
-require("dotenv").config();
+//require("dotenv").config();
 const path = require("path");
 const str = "Hello json";
 app.use("/public",express.static(path.join(__dirname,"public")));
